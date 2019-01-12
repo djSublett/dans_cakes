@@ -1,0 +1,58 @@
+﻿body
+{
+    background-color: lightgray;
+}
+header, footer {
+    margin: 0 auto;
+    background-color: #e9ecef;
+    color: darkred;
+    text-align: center;
+}
+.name-font {
+    font-family: cursive;
+    font-weight: bold;
+}
+nav {
+    text-align: center;
+    margin: 20px 0 0;
+    
+}
+
+nav .btn {
+    background-color: darkgrey;
+    color: darkred;
+}
+.btn {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.btn:active {
+    box-shadow: none;
+}
+
+
+.btn:hover {
+    /* Applies to links under the pointer */
+    font-weight: bold;
+}
+
+.error {
+    display: none;
+    margin-left: 10px;
+}
+
+.error_show {
+    color: red;
+    margin-left: 10px;
+}
+input.invalid, textarea.invalid {
+    border: 2px solid red;
+}
+
+input.valid, textarea.valid {
+    border: 2px solid green;
+}
+#contactForm .hint {
+    color: red;
+    margin-right: 10px;
+}
