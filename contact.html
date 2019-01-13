@@ -93,11 +93,11 @@
             <!--select menu-->
             <label for="reason-select">Reason For Inquiry:</label>
             <select id="select " name="reason" class="custom-select" required>
-                <option value="0">--Please Choose an Option--</option>
-                <option value="1">Catering</option>
-                <option value="2">Private Party</option>
-                <option value="3">Feedback</option>
-                <option value="4">Other</option>
+                <option value="">--Please Choose an Option--</option>
+                <option value="catering">Catering</option>
+                <option value="private">Private Party</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
             </select>
             <span id="selecterror" class="hint"></span>
 
@@ -106,10 +106,10 @@
             <!--text area for additional info-->
             <div class="form-group">
                 <label for="info">Additional Information: </label>
-                <textarea class="form-control" id="info" rows="5"></textarea>
+                <textarea class="form-control" id="textarea" rows="5"></textarea>
                 <span id="textareaerror" class="hint"></span>
-
             </div>
+
             <!--radio buttons for visiting restaurant-->
             <label for="radio">Have you been to the restaurant?</label>
             <div class="form-check form-check-inline">

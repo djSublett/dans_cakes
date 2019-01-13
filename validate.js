@@ -1,72 +1,90 @@
-//page onload function to alert users page is best viewed with JS enabled
-$("document").ready(function () {
-    alert("This page is best viewed with Javascript enabled");
+document.addEventListener("DOMContentLoaded", function (event) {
+    alert("This page is best viewed with JavaScript enabled");
 });
 
-//form validation function
 function validate() {
-    //function to check if a name has been entered
+
+    // NEW: move this way up here so all validations can affect its value:
+    var formValid = true;
+
+    // function to check if a name has been entered
     var name = document.getElementById('name').value;
 
-    if (name == null || name == "") {
-        document.getElementById('nameerror').innerHTML = "Please enter your full name: ";
+    if (name == null || name.trim() == "") {
+        document.getElementById('nameerror').innerHTML = "Please enter your full name";
+        formValid = false;
+    } else {
+        document.getElementById('nameerror').innerHTML = "";
     }
 
-    //function to check if an email has been entered
+    // function to check if an email has been entered
     var email = document.getElementById('email').value;
 
-    if (email == null || email == "") {
-        document.getElementById('emailerror').innerHTML = "Please enter your email address: ";
+    if (email == null || email.trim() == "") {
+        document.getElementById('emailerror').innerHTML = "Please enter your email address";
+        formValid = false;
+    } else {
+        document.getElementById('emailerror').innerHTML = "";
     }
 
-    //function to check if a telephone number has been provided
+    // function to check if a telephone number has been provided
     var phone = document.getElementById('phone').value;
-    if (phone == null || phone == "") {
-        document.getElementById('phoneerror').innerHTML = "Please enter your telephone number: ";
+
+    if (phone == null || phone.trim() == "") {
+        document.getElementById('phoneerror').innerHTML = "Please enter your telephone number";
+        formValid = false;
+    } else {
+        document.getElementById('phoneerror').innerHTML = "";
     }
 
-    //function to check if a selection was made on the dropdown
-    var select = document.forms["contactForm"]["reason"];  
+    //validate the select options
+    
 
-    if (select.selectedIndex < 1) {
-        document.getElementById('selecterror').innerHTML("Please select reason.");
-        return false;
+    //function to validate the textarea field
+    var name = document.getElementById('textarea').value;
+
+    if (name == null || name.trim() == "") {
+        document.getElementById('textareaerror').innerHTML = "Please enter additional info";
+        formValid = false;
+    } else {
+        document.getElementById('textareaerror').innerHTML = "";
     }
-
-    //function to check if textarea is empty
-
-
-    //function to validate a radio button has been selected
-    var radios = document.getElementsByName("radio");
-    var formValid = false;
-
+    // function to validate if any radio button has been selected
+    var radios = document.getElementsByName('radio');
+    var radiosValid = false;
     var i = 0;
-    while (!formValid && i < radios.length) {
-        if (radios[i].checked) formValid = true;
+
+    while (!radiosValid && i < radios.length) {
+        if (radios[i].checked) radiosValid = true;
         i++;
     }
 
-    if (!formValid) {
+    if (!radiosValid) {
         document.getElementById('radioerror').innerHTML = "(Please check one)";
-        return formValid;
+        formValid = false;
+    } else {
+        document.getElementById('radioerror').innerHTML = "";
     }
 
-    //function to confirm if checkbox has been checked
-    var listItems = document.getElementById("checkboxlist");
-    var itemcount = listItems.length;
-    var iCount = 0;
-    var isItemSelected = false;
-    for (iCount = 0; iCount < itemcount; iCount++) {
-        if (listItems[iCount].checked) {
-            isItemSelected = true;
-            break;
-        }
+    // function to confirm if any checkbox has been checked
+    var checkboxes = document.getElementsByName('checkbox');
+    var checkboxesValid = false;
+    var j = 0;
+
+    while (!checkboxesValid && j < checkboxes.length) {
+        if (checkboxes[j].checked) checkboxesValid = true;
+        j++;
     }
-    if (!isItemSelected) {
-        document.getElementById('checkboxerror').innerHTML("Please select an Item.");
+
+    if (!checkboxesValid) {
+        document.getElementById('checkboxerror').innerHTML = "(Please select at least one)";
+        formValid = false;
+    } else {
+        document.getElementById('checkboxerror').innerHTML = "";
     }
+
+    // now that all validations have run, return the conclusion
+    alert("The form has been submitted!");
+    return formValid;
     
-    else {
-        confirm('You form has been submitted');
-    }
 }
