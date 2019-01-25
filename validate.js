@@ -2,11 +2,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
     alert("This page is best viewed with JavaScript enabled");
 });
 
-function validate() {
+function validate(formValid) {
+    
 
     // NEW: move this way up here so all validations can affect its value:
     var formValid = true;
-
+    var counter = 0;
+    if (!formValid) {
+        counter++;
+    }
     // function to check if a name has been entered
     var name = document.getElementById('name').value;
 
@@ -38,7 +42,16 @@ function validate() {
     }
 
     //validate the select options
+    var select = document.getElementById('select').value;
+        if (select == '') {
+            document.getElementById('selecterror').innerHTML = "Please make a selection";
+            formValid = false;
+        } else {
+            document.getElementById('selecterror').innerHTML = "";
+
+        }
     
+
 
     //function to validate the textarea field
     var name = document.getElementById('textarea').value;
@@ -81,10 +94,11 @@ function validate() {
         formValid = false;
     } else {
         document.getElementById('checkboxerror').innerHTML = "";
+
+    }
+    // now that all validations have run, return the conclusion
+    if (counter == 0) {
+        alert("Congrats");
     }
 
-    // now that all validations have run, return the conclusion
-    alert("The form has been submitted!");
-    return formValid;
-    
 }
