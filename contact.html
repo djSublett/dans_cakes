@@ -1,180 +1,272 @@
 ﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Contact Us</title>
     <style>
+      .contact-header {
+        font-family: cursive;
+        text-align: center;
+        font-size: 50px;
+        color: darkred;
+      }
 
-        .contact-header {
-            font-family: cursive;
-            text-align: center;
-            font-size: 50px;
-            color: darkred;
-        }
+      form {
+        font-weight: bold;
+        text-align: center;
+      }
 
-        form {
-            font-weight: bold;
-            text-align: center;
-        }
+      .contact {
+        font-weight: normal;
+      }
+      .checkbox input {
+        margin: 0 10px 0;
+      }
 
-        
-        .contact {
-            font-weight: normal;
-        }
-        .checkbox input {
-            margin: 0 10px 0;
-        }
-       
-        textarea {
-            width: 20%;
-            height: 5rem;
-        }
+      textarea {
+        width: 20%;
+        height: 5rem;
+      }
 
-        .sendRequest {
-            text-align: center;
-        }
-        
+      .sendRequest {
+        text-align: center;
+      }
     </style>
     <!--link to bootstrap css-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <!--link for icons-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
 
     <!--link to external stylesheet-->
     <link href="restaurantStyles.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <div class="jumbotron name-font">
-                <h1 class="display-4">Dan's Cakes</h1>
-                <hr class="my-4">
-                <p class="lead">BIG NEWS!! Dan's Cakes will be opening a new restaurant VERY soon!!!!</p>
+      <header>
+        <div class="jumbotron name-font">
+          <h1 class="display-4">Dan's Cakes</h1>
+          <hr class="my-4" />
+          <p class="lead">
+            BIG NEWS!! Dan's Cakes will be opening a new restaurant VERY
+            soon!!!!
+          </p>
+        </div>
+      </header>
+      <hr />
+      <nav>
+        <!--home icon link-->
+        <a href="index.html" class="btn badge-pill"
+          ><i class="fas fa-home"></i>Home</a
+        >
+        <a href="menu.html" class="btn badge-pill">Menu</a>
+        <a href="contact.html" class="btn badge-pill">Contact Us</a>
+      </nav>
+      <hr />
+      <h2 class="contact-header">Contact Us</h2>
+      <hr />
 
-            </div>
-        </header>
-        <hr />
-        <nav>
-            <!--home icon link-->
-            <a href="index.html" class="btn badge-pill"><i class="fas fa-home"></i></a>
-            <a href="menu.html" class="btn badge-pill">Menu</a>
-            <a href="contact.html" class="btn badge-pill">Contact Us</a>
-        </nav>
-        <hr />
-        <h2 class="contact-header">Contact Us</h2>
-        <hr />
-
-        <!--form for contact info-->
-        <form name="contactForm" method="post" id="contactForm" novalidate onsubmit="return validate()">
-            <div class="form-group col-form-label">
-                <label for="name">Name: </label>
-                <input type="text" class="form-control" id="name" placeholder="Please enter your full name.." required>
-                <span id="nameerror" class="hint"></span>
-
-            </div>
-            <div class="form-group">
-                <label for="email">Email: </label>
-                <i class="fas fa-envelope prefix"></i>
-                <input type="email" class="form-control" id="email" placeholder="Please enter your email address.." aria-describedby="email" required>
-                <span id="emailerror" class="hint"></span>
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone: </label>
-                <i class="fas fa-phone-square"></i>
-                <input type="tel" class="form-control" id="phone" required>
-                <span id="phoneerror" class="hint"></span>
-
-
-            </div>
-            <!--select menu-->
-            <label for="reason-select">Reason For Inquiry:</label>
-            <select id="select" name="reason" class="custom-select" required>
-                <option value="">--Please Choose an Option--</option>
-                <option value="catering">Catering</option>
-                <option value="private">Private Party</option>
-                <option value="feedback">Feedback</option>
-                <option value="other">Other</option>
-            </select>
-            <span id="selecterror" class="hint"></span>
-
-            <br />
-            <br />
-            <!--text area for additional info-->
-            <div class="form-group">
-                <label for="info">Additional Information: </label>
-                <textarea class="form-control" id="textarea" rows="5"></textarea>
-                <span id="textareaerror" class="hint"></span>
-            </div>
-
-            <!--radio buttons for visiting restaurant-->
-            <label for="radio">Have you been to the restaurant?</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="radio" id="no-radio" value="no">
-                <label class="form-check-label" for="no-radio">
-                    No
-                </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="radio" id="yes-radio" value="yes">
-                <label class="form-check-label" for="yes-radio">
-                    Yes
-                </label>
-                <span id="radioerror" class="hint"></span>
-            </div>
-            <br />
-            <!--checkboxes for contacting-->
-            <label for="checkboxes">Best days to contact you:</label>
-            <div id="checkboxlist">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" name="checkbox" type="checkbox" id="monday" value="monday">
-                <label class="form-check-label" for="monday">M</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" name="checkbox" type="checkbox" id="tuesday" value="tuesday">
-                <label class="form-check-label" for="tuesday">T</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" name="checkbox" type="checkbox" id="wednesday" value="wednesday">
-                <label class="form-check-label" for="wednesday">W</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" name="checkbox" type="checkbox" id="thursday" value="thursday">
-                <label class="form-check-label" for="thursday">Th</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" name="checkbox" type="checkbox" id="friday" value="friday">
-                <label class="form-check-label" for="friday">F</label>
-            </div>
-            <span id="checkboxerror" class="hint"></span>
-            </div>
-
-            <!--send request button-->
-            <div class="sendRequest" id="contact-submit">
-                <button type="submit" form="contactForm" > Send Request </button>
-            </div>
-        </form>
-        <br />
+      <!--form for contact info-->
+      <form
+        name="contactForm"
+        method="post"
+        id="contactForm"
+        novalidate
+        onsubmit="return validate()"
+      >
+        <div class="form-group col-form-label">
+          <label for="name">Name: </label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Please enter your full name.."
+            required
+          />
+          <span id="nameerror" class="hint"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email: </label>
+          <i class="fas fa-envelope prefix"></i>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Please enter your email address.."
+            aria-describedby="email"
+            required
+          />
+          <span id="emailerror" class="hint"></span>
+          <small id="emailHelp" class="form-text text-muted"
+            >We'll never share your email with anyone else.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone: </label>
+          <i class="fas fa-phone-square"></i>
+          <input
+            type="tel"
+            class="form-control"
+            id="phone"
+            placeholder="Please enter your telephone number.."
+            required
+          />
+          <span id="phoneerror" class="hint"></span>
+        </div>
+        <!--select menu-->
+        <label for="reason-select">Reason For Inquiry:</label>
+        <select id="select" name="reason" class="custom-select" required>
+          <option value="">--Please Choose an Option--</option>
+          <option value="catering">Catering</option>
+          <option value="private">Private Party</option>
+          <option value="feedback">Feedback</option>
+          <option value="other">Other</option>
+        </select>
+        <span id="selecterror" class="hint"></span>
 
         <br />
-        <footer>
-            <p>1123 Silk Way, Anchorage, AK, 99501</p>
-            <p>907-998-0122</p>
-        </footer>
+        <br />
+        <!--text area for additional info-->
+        <div class="form-group">
+          <label for="info">Additional Information: </label>
+          <textarea
+            class="form-control"
+            id="textarea"
+            rows="5"
+            placeholder="Please tell us more..."
+          ></textarea>
+          <span id="textareaerror" class="hint"></span>
+        </div>
+
+        <!--radio buttons for visiting restaurant-->
+        <label for="radio">Have you been to the restaurant?</label>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="radio"
+            id="no-radio"
+            value="no"
+          />
+          <label class="form-check-label" for="no-radio">
+            No
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="radio"
+            id="yes-radio"
+            value="yes"
+          />
+          <label class="form-check-label" for="yes-radio">
+            Yes
+          </label>
+          <span id="radioerror" class="hint"></span>
+        </div>
+        <br />
+        <!--checkboxes for contacting-->
+        <label for="checkboxes">Best days to contact you:</label>
+        <div id="checkboxlist">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              name="checkbox"
+              type="checkbox"
+              id="monday"
+              value="monday"
+            />
+            <label class="form-check-label" for="monday">M</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              name="checkbox"
+              type="checkbox"
+              id="tuesday"
+              value="tuesday"
+            />
+            <label class="form-check-label" for="tuesday">T</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              name="checkbox"
+              type="checkbox"
+              id="wednesday"
+              value="wednesday"
+            />
+            <label class="form-check-label" for="wednesday">W</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              name="checkbox"
+              type="checkbox"
+              id="thursday"
+              value="thursday"
+            />
+            <label class="form-check-label" for="thursday">Th</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              name="checkbox"
+              type="checkbox"
+              id="friday"
+              value="friday"
+            />
+            <label class="form-check-label" for="friday">F</label>
+          </div>
+          <span id="checkboxerror" class="hint"></span>
+        </div>
+
+        <!--send request button-->
+        <div class="sendRequest" id="contact-submit">
+          <button type="submit" form="contactForm">Send Request</button>
+        </div>
+      </form>
+      <br />
+
+      <br />
+      <footer>
+        <p>1123 Silk Way, Anchorage, AK, 99501</p>
+        <p>907-998-0122</p>
+      </footer>
     </div>
-    
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+
     <!--javascript link to external sheet-->
     <script src="validate.js"></script>
-
-
-    
-</body>
+  </body>
 </html>
